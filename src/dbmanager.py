@@ -47,6 +47,8 @@ class DBManager():
                                 'url text)')
         except psycopg2.errors.DuplicateTable:
             print('Таблицы уже созданы')
+        except psycopg2.OperationalError:
+            print('Отсутствует БД hh_employers')
 
     @classmethod
     def enter_data(cls, data):
